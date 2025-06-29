@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extension Options</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #e3f2fd, #f5f5f5);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      .form-group {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #0d47a1;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      input[type="text"] {
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      input[type="text"]:focus {
+        border-color: #1976d2;
+        box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
+      }
+
+      p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      a {
+        color: #1565c0;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #save-button {
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #0d47a1;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      #save-button:hover {
+        background-color: #1565c0;
+        transform: translateY(-1px);
+      }
+
+      #success-message {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #2e7d32;
+        background-color: #e8f5e9;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #c8e6c9;
+        display: none; /* Hidden by default, show using JS */
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        input[type="text"] {
+          font-size: 14px;
+        }
+
+        #save-button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 100%; max-width: 500px">
+      <h1>SummariQ Settings</h1>
+      <div class="form-group">
+        <label for="api-key">Gemini API Key</label>
+        <input
+          type="text"
+          id="api-key"
+          placeholder="Enter your Gemini API Key"
+        />
+        <p>
+          You can get your Gemini API Key from
+          <a href="https://makersuite.google.com/app/apikey" target="blank">
+            Google AI Studio</a
+          >
+        </p>
+      </div>
+      <button id="save-button">Save Settings</button>
+      <p id="success-message" class="success-message">
+        Settings saved successfully!
+      </p>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
