@@ -71,7 +71,7 @@ document.getElementById("copy-btn").addEventListener("click", () => {
 
 async function getGeminiSummary(text, summaryType, apiKey) {
   // Truncate very long texts to avoid API limits (typically around 30K tokens)
-  const maxLength = 30000;
+  const maxLength = 20000;
   const truncatedText =
     text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 
